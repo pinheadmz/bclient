@@ -627,6 +627,7 @@ class CLI {
         this.log('  $ unlock [passphrase] [timeout?]: Unlock wallet.');
         this.log('  $ resend: Resend pending transactions.');
         this.log('  $ rescan [height]: Rescan for transactions.');
+        this.log('  $ wallets: list all wallets.');
         this.log('  $ admin [command]: Admin commands');
         this.log('Other Options:');
         this.log('  --passphrase [passphrase]: For signing/account-creation.');
