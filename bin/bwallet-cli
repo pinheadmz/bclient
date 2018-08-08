@@ -192,7 +192,8 @@ class CLI {
   async deriveReceive() {
     const account = this.config.str([0, 'account']);
     const index = this.config.uint([1, 'index']);
-    const addr = await this.wallet.deriveReceive(account, index);
+    const force = this.config.bool([2, 'force']);
+    const addr = await this.wallet.deriveReceive(account, index, force);
 
     this.log(addr);
   }
@@ -200,7 +201,8 @@ class CLI {
   async deriveChange() {
     const account = this.config.str([0, 'account']);
     const index = this.config.uint([1, 'index']);
-    const addr = await this.wallet.deriveChange(account, index);
+    const force = this.config.bool([2, 'force']);
+    const addr = await this.wallet.deriveChange(account, index, force);
 
     this.log(addr);
   }
@@ -208,7 +210,8 @@ class CLI {
   async deriveNested() {
     const account = this.config.str([0, 'account']);
     const index = this.config.uint([1, 'index']);
-    const addr = await this.wallet.deriveNested(account, index);
+    const force = this.config.bool([2, 'force']);
+    const addr = await this.wallet.deriveNested(account, index, force);
 
     this.log(addr);
   }
