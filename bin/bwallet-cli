@@ -83,6 +83,11 @@ class CLI {
       accountKey: this.config.str('account-key')
     };
 
+    if (options.watchOnly && !options.accountKey) {
+      this.log('Account key required when creating watch-only wallet');
+      return;
+    }
+
     const wallet = await this.client.createWallet(id, options);
 
     this.log(wallet);
