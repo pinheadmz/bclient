@@ -452,8 +452,11 @@ class CLI {
   }
 
   async rpc() {
-    const method = this.argv.shift();
+    let method = this.argv.shift();
     const params = [];
+
+    if (!method)
+      method = 'help';
 
     for (const arg of this.argv) {
       let param;
